@@ -1,0 +1,154 @@
+/*   Variables Start  */
+
+:root{
+    /* Font Family */ 
+    --font-Gagalin: 'Gagalin', cursive;
+    --font-MYRIADPRO: 'MYRIADPRO', cursive;
+    --font-Feeling: 'The Feeling', cursive;
+  
+    /* Color variables */
+  }
+  
+  /*   Font Family  */
+  @font-face{
+    font-family: 'Gagalin';
+    src: url(../fonts/gagalin/Gagalin-Regular.otf);
+  }
+  
+  @font-face{
+    font-family: 'MYRIADPRO';
+    src: url(../fonts/myriad-pro/MYRIADPRO-REGULAR.OTF);
+  }
+  
+  @font-face{
+    font-family: 'The Feeling';
+    src: url(../fonts/the-feeling/The-Feeling.ttf);
+  }
+  
+  /*   Variables end  */
+  
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  body {
+    font: normal 400 1rem var(--font-MYRIADPRO);
+    min-height: 100vh;
+    background-color: #345;
+	background-image: linear-gradient(to bottom, #0009, transparent);
+  }
+
+  /* Header css start */
+
+.links {
+	background-color: #123;
+	background-image: linear-gradient(to bottom, #0003, transparent);
+	border-bottom: 1px solid #0003;
+	box-shadow: 0 0 32px #0003;
+	font-weight: 300;
+}
+.links > a {
+	color: #9ab;
+	padding: .75em;
+	text-align: center;
+	text-decoration: none;
+	transition: all .5s;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 0.875rem;
+}
+.links > a:hover {
+	background: #ffffff06;
+	color: #adf;
+}
+.links > .line {
+	background: #68a;
+	height: 1px;
+	pointer-events: none;
+}
+
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.links {
+	grid-template-columns: repeat(var(--items), 1fr);
+	position: relative;
+}
+@media screen and (min-width:768px) {
+    .links {
+        display: grid !important;
+    }
+}
+.links > .line {
+	opacity: 0;
+	transition: all .5s;
+	position: absolute;
+	bottom: 0;
+	left: var(--left, calc(100% / var(--items) * (var(--index) - 1)));
+	width: var(--width, calc(100% / var(--items)));
+	--index: 0;
+}
+.links > a:hover ~ .line {
+	opacity: 1;
+}
+
+.links > a:nth-of-type(1):hover ~ .line { --index: 1; }
+.links > a:nth-of-type(2):hover ~ .line { --index: 2; }
+.links > a:nth-of-type(3):hover ~ .line { --index: 3; }
+.links > a:nth-of-type(4):hover ~ .line { --index: 4; }
+.links > a:nth-of-type(5):hover ~ .line { --index: 5; }
+.links > a:nth-of-type(6):hover ~ .line { --index: 6; }
+.links > a:nth-of-type(7):hover ~ .line { --index: 7; }
+.links > a:nth-of-type(8):hover ~ .line { --index: 8; }
+.links > a:nth-of-type(9):hover ~ .line { --index: 9; }
+.links > a:nth-of-type(10):hover ~ .line { --index: 10; }
+.links > a:last-of-type:hover ~ .line { --index: var(--items); }
+
+/* Header css end */
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+
+
+
+
+
+
