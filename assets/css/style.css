@@ -5,8 +5,9 @@
     --font-Gagalin: 'Gagalin', cursive;
     --font-MYRIADPRO: 'MYRIADPRO', cursive;
     --font-Feeling: 'The Feeling', cursive;
-  
     /* Color variables */
+    --theme-color:#123;
+    --text-color:#9ab;
   }
   
   /*   Font Family  */
@@ -36,21 +37,22 @@
   body {
     font: normal 400 1rem var(--font-MYRIADPRO);
     min-height: 100vh;
-    background-color: #345;
+    background-color: var(--theme-color);
 	background-image: linear-gradient(to bottom, #0009, transparent);
+    position: relative;
   }
 
   /* Header css start */
 
 .links {
-	background-color: #123;
+	background-color: var(--theme-color);
 	background-image: linear-gradient(to bottom, #0003, transparent);
 	border-bottom: 1px solid #0003;
 	box-shadow: 0 0 32px #0003;
 	font-weight: 300;
 }
 .links > a {
-	color: #9ab;
+	color: var(--text-color);
 	padding: .75em;
 	text-align: center;
 	text-decoration: none;
@@ -69,12 +71,7 @@
 	pointer-events: none;
 }
 
-#header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-}
+
 .links {
 	grid-template-columns: repeat(var(--items), 1fr);
 	position: relative;
@@ -111,6 +108,7 @@
 
 /* Header css end */
 
+/* Side nav css start */
 
 .sidenav {
     height: 100%;
@@ -119,25 +117,22 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: var(--theme-color);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
   }
-  
   .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: var(--text-color);
     display: block;
     transition: 0.3s;
   }
-  
   .sidenav a:hover {
     color: #f1f1f1;
   }
-  
   .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -145,6 +140,64 @@
     font-size: 36px;
     margin-left: 50px;
   }
+  /* Side nav css end */
+
+/* Search box css start */
+  .search-box{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+  }
+  .input-search{
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: #22a6b3;
+    padding-right: 40px;
+    color:var(--text-color);
+  }
+  .input-search::placeholder{
+    color:rgba(255,255,255,.5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+  }
+  .btn-search{
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color:#ffffff ;
+    background-color:transparent;
+    pointer-events: painted;  
+  }
+  .btn-search:focus ~ .input-search{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  .input-search:focus{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  /* Search box css end */
 
 
 
